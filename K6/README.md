@@ -2,7 +2,7 @@
 k6 Stress Testing Suite
 ======================
 
-This directory contains multiple k6-based load testing scripts for real-world applications and APIs.
+This directory contains multiple k6-based stress testing scripts for real-world applications and APIs.
 Each subfolder represents a dedicated project or endpoint under test.
 
 Structure
@@ -45,7 +45,7 @@ Purpose
 
 These scripts are used to:
 - Simulate realistic user traffic
-- Detect website or API load capacity
+- Detect website or API stress capacity
 - Capture performance bottlenecks
 - Strengthen QA performance portfolio
 
