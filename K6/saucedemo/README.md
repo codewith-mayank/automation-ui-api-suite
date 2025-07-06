@@ -1,6 +1,6 @@
-# Load Testing: saucedemo.com with k6
+# Stress Testing: saucedemo.com with k6
 
-This script performs a structured load test on [`https://www.saucedemo.com`](https://www.saucedemo.com) using [k6](https://k6.io), simulating real-world user traffic to evaluate performance and stability.
+This script performs a structured Stress test on [`https://www.saucedemo.com`](https://www.saucedemo.com) using [k6](https://k6.io), simulating real-world user traffic to evaluate performance and stability.
 
 ---
 
@@ -13,11 +13,11 @@ This script performs a structured load test on [`https://www.saucedemo.com`](htt
 - Measures:
   - Average response time
   - Request throughput
-  - System behavior under high load
+  - System behavior under high Stress
 
 ---
 
-## Load Configuration
+## Stress Configuration
 
 js
 export const options = {
@@ -50,12 +50,12 @@ k6 run --out json=../results/saucedemo-results.json saucedemo-test.js
 ## Purpose
 
 # This test helps evaluate:
-	•	How much load the site can handle before response times degrade
+	•	How much Stress the site can handle before response times degrade
 	•	Whether the server can maintain integrity under stress
 	•	Real-time functional correctness under peak traffic
 
  ## Technologies Used
-	•	k6: Open-source load testing tool (CLI)
+	•	k6: Open-source Stress testing tool (CLI)
 	•	JavaScript (ES6)
 
 ⸻
