@@ -1,27 +1,48 @@
-# Cypress UI Automation (TypeScript)
 
-This folder contains automated UI test cases built using Cypress with TypeScript.
+# Cypress Automation Suite
 
-- All test files are located in the `tests/` directory
-- Written in TypeScript for better readability and type safety
-- Suitable for end-to-end testing of modern web applications
+This project contains end-to-end UI test cases written using Cypress.  
+It targets real-world user workflows on demo and production-grade websites.
 
-## Setup
+---
 
-- Initialize project:  
-  `npm init -y`
+## Getting Started
 
-- Install dependencies:  
-  `npm install cypress typescript --save-dev`
+1. Clone the repository  
+2. Install dependencies:
 
-- Open Cypress Test Runner:  
-  `npx cypress open`
+```bash
+npm install
+```
 
-- Run tests in headless mode (CI/CD use):  
-  `npx cypress run`
+3. Run tests:
 
-## Notes
+```bash
+npx cypress open     # for interactive mode
+npx cypress run      # for headless mode
+```
 
-- Structure is kept minimal for clarity and easy scaling
-- Recommended to follow consistent selectors and assertions
-- Additional folders like `/fixtures/`, `/support/` can be added as needed
+---
+
+## Tech Stack
+
+- Cypress 12+  
+- JavaScript / TypeScript  
+- Mocha, Chai
+
+---
+
+## Best Practices Followed
+
+- Project-based folder organization  
+- Reusable test data via fixtures  
+- Custom commands in support  
+- Page-specific test grouping  
+- Modular and readable test cases
+
+---
+
+## Author
+
+[Mayank Choudhary](https://github.com/codewith-mayank)  
+Automation QA | Cypress + Selenium + Playwright  
