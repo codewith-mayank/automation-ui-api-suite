@@ -1,6 +1,6 @@
-# Load Testing: saucedemo.com with k6
+# Stress Testing: saucedemo.com with k6
 
-This script performs a structured load test on [`https://www.saucedemo.com`](https://www.saucedemo.com) using [k6](https://k6.io), simulating real-world user traffic to evaluate performance and stability.
+This script performs a structured Stress test on [`https://www.saucedemo.com`](https://www.saucedemo.com) using [k6](https://k6.io), simulating real-world user traffic to evaluate performance and stability.
 
 ---
 
@@ -13,11 +13,11 @@ This script performs a structured load test on [`https://www.saucedemo.com`](htt
 - Measures:
   - Average response time
   - Request throughput
-  - System behavior under high load
+  - System behavior under high Stress
 
 ---
 
-## Load Configuration
+## Stress Configuration
 
 js
 export const options = {
@@ -41,21 +41,38 @@ k6 run --out json=../results/saucedemo-results.json saucedemo-test.js
 
 ## Sample Result Summary
 
-- 7,769 requests made
-- 100 concurrent virtual users (VUs)
-- Avg response time: 79ms
-- Failures: 0%
-- 15,538 checks passed (status + content)
+STRESS TEST REPORT SUMMARY – SAUCEDEMO
+
+Test Tool: k6 (open-source)
+Test Type: Stress (ramped up to 1300 VUs)
+
+Total Duration: 3m30s
+Max VUs: 1300
+
+KEY RESULTS:
+- 95% response time: 101ms (Excellent)
+- Request failure rate: 82.79% (Exceeded safe threshold)
+- Max iterations handled: 105,703
+- Only 17% requests returned HTTP 200 with valid content
+
+OBSERVATION:
+- Server remained stable till approx 600–700 VUs.
+- After 800+ VUs, errors, failed responses, and timeouts increased sharply.
+- Site is not capable of handling extreme loads beyond expected concurrency.
+
+RECOMMENDATION:
+- Define soft user cap: **650 VUs**
+- Above this, horizontal scaling or caching must be introduced
 
 ## Purpose
 
 # This test helps evaluate:
-	•	How much load the site can handle before response times degrade
+	•	How much Stress the site can handle before response times degrade
 	•	Whether the server can maintain integrity under stress
 	•	Real-time functional correctness under peak traffic
 
  ## Technologies Used
-	•	k6: Open-source load testing tool (CLI)
+	•	k6: Open-source Stress testing tool (CLI)
 	•	JavaScript (ES6)
 
 ⸻
