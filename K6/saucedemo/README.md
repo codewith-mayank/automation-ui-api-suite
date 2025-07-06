@@ -41,11 +41,28 @@ k6 run --out json=../results/saucedemo-results.json saucedemo-test.js
 
 ## Sample Result Summary
 
-- 7,769 requests made
-- 100 concurrent virtual users (VUs)
-- Avg response time: 79ms
-- Failures: 0%
-- 15,538 checks passed (status + content)
+STRESS TEST REPORT SUMMARY – SAUCEDEMO
+
+Test Tool: k6 (open-source)
+Test Type: Stress (ramped up to 1300 VUs)
+
+Total Duration: 3m30s
+Max VUs: 1300
+
+KEY RESULTS:
+- 95% response time: 101ms (Excellent)
+- Request failure rate: 82.79% (Exceeded safe threshold)
+- Max iterations handled: 105,703
+- Only 17% requests returned HTTP 200 with valid content
+
+OBSERVATION:
+- Server remained stable till approx 600–700 VUs.
+- After 800+ VUs, errors, failed responses, and timeouts increased sharply.
+- Site is not capable of handling extreme loads beyond expected concurrency.
+
+RECOMMENDATION:
+- Define soft user cap: **650 VUs**
+- Above this, horizontal scaling or caching must be introduced
 
 ## Purpose
 
