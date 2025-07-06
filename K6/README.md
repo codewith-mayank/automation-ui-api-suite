@@ -1,5 +1,5 @@
 
-k6 Load Testing Suite
+k6 Stress Testing Suite
 ======================
 
 This directory contains multiple k6-based load testing scripts for real-world applications and APIs.
@@ -10,7 +10,7 @@ Structure
 
 k6/
 ├── saucedemo/
-│   ├── saucedemo-test.js
+│   ├── saucedemo-stress-test.js
 │   └── README.md
 ├── reqres/
 │   └── reqres-test.js (coming soon)
@@ -19,7 +19,7 @@ k6/
 Tool Used
 ----------
 
-- k6 by Grafana – developer-centric load testing CLI
+- k6 by Grafana – developer-centric stress testing CLI
 - JavaScript (ES6)
 
 Install (macOS):
@@ -34,7 +34,7 @@ k6 run <test-script>.js
 
 Example:
 cd saucedemo
-k6 run saucedemo-test.js
+k6 run saucedemo-stress-test.js
 
 Generate JSON output for analysis:
 k6 run --out json=results.json saucedemo-test.js
